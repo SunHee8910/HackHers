@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Game</title>
+</head>
+<style>
+    body{
+        background-color: #FFDFDF;
+    }
+    .gameTitle{
+        text-align: center;
+        text-decoration: underline;
+        color: #FF066E;
+        margin-bottom: 1em;
+    }
+    .beginn, .decisions, .outcome, .ending{
+        background-color: white;
+        width: 50%;
+        height: 50%;
+        border: 2px solid #fe9d9d;
+        padding-bottom: 5px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .beginn{
+        z-index: 5;
+    }
+    .decisions{
+        z-index: 4;
+    }
+    .outcome{
+        z-index: 3;
+    }
+    .ending{
+        z-index: 2;
+    }
+
+    .instructions{
+        margin:auto;
+        background-color: white;
+        text-align: center;
+        border: 2px solid #fe9d9d;
+        width: 50%;
+        padding-bottom: 5px;
+        z-index: 100;
+
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .top{
+        border-bottom: 2px solid #fe9d9d;
+        display: flex;
+    }
+
+    .words{
+        margin: auto;
+        display: block;
+        text-align: center;
+        /* border: 2px solid black; */
+    }
+
+    .close-btn{
+        cursor: pointer;
+        margin-right:5px;
+        float:right;
+        font-size: 25px;
+        text-align: center;
+        font-weight: 600;
+        line-height: 20px;
+    }
+
+    #popup1.active{
+        display: block;
+    }
+
+    fieldset{
+        text-align: center;
+        border:none
+    }
+
+    fieldset strong,
+    fieldset .column{
+        float:left;
+        width: 11em;
+    }
+
+    input[type = "button"]{
+        border: 1px solid pink;
+        background-color: #ff7676;
+        color: white;
+        font-size: 12pt;
+        border-radius: 10px;
+        overflow: auto;
+        cursor: pointer;
+        margin:2px;
+        white-space: normal;
+        word-wrap:break-word;
+    }
+    input[type = "text"]{
+        border: 2px solid pink;
+        border-radius: 4px;
+    }
+
+    
+</style>
+
+<script>
+   function togglePopup(){
+    document.getElementById("popup1").classList.toggle("active");
+   }
+   function hide(id){
+    document.getElementById(id).style.display = 'none';
+   }
+
+</script>
+
+<body>
+    <div class = "center">
+        <div class = "gameTitle">
+            Budget Game Demo
+        </div>
+
+        <div class = "game">
+            <div class = "active beginn " id = "beginning">
+                <fieldset>
+                    <strong class = "column">Starting Balance: </strong>
+                    <input type = "text" size = "16" value = "$850"><br><br>
+                    <strong class = "column">Paycheck 1:</strong>
+                    <input type = "text" size = "16" value = "$2,000"><br><br>
+                    <strong class = column>Paycheck 2:</strong>
+                    <input type = "text" size = "16" value = "$1,755"><br><br>
+                </fieldset>
+                <input type = "button" value = "Begin" class = "beginBtn" onclick = "hide('beginning')">
+            </div>
+
+            <div class = "decisions" id = "dec">
+                <p>It's been a week since you got paid! (You paid bills and lost $400.)<br>
+                    A coworker came to you with an investment proposal!
+                    It looks really well made but you don't know them very well.
+                    He's asking for $1000. 
+                    <br>Do you invest?
+                    <br> If it goes well, you get $2000 on top of your $1000. 
+                    If it doesn't you'll lose everything.
+                </p>
+                <input type = "button" class = "yes" value = "Yes(-$1000)" onclick= "hide('dec')">
+                <input type = "button" class = "no" value = "No">
+            </div>
+
+            <div class = "outcome" id = "out">
+                <p>You lost everything! Your coworker was involved with the mob!
+                    <br>
+                    Now they're after you and they want all you have!
+                </p>
+                <input type = "button" class = "giveevery" value = "Give them whatever they want!(Lose literally everything)"
+                onclick = "hide('out')">
+                <br>
+                <input type = "button" class = "givenoth" value = "Give them nothing! Fight!(Lose your life)">
+            </div>
+            <div class = "ending">
+                <p>You've given them everything! Your bank account, your house, your belongings,
+                    everything. Try again?
+                </p>
+            </div>
+        </div>
+
+        <div class = "popup active instructions" id = "popup1">
+            <div class = "overlay"></div>
+            <div class = "content">
+                <div class = "top"><span class = "words">How To Play</span>
+                    <span class = "close-btn" onclick = "togglePopup()">&times;</span>
+                </div>
+                <p>Welcome to our budget simulator! 
+                    This is a simple demo for one month of working!</p>
+                <p>In this simulator you are getting paid bi-weekly,
+                    which is typical for 43% of Americans. You can type
+                    in any numbers to play around with, but your actions DO have 
+                    consquences!
+                </p>
+
+                <input type = "button" value = "START" 
+                class = "start" id = "startBut" onclick = "togglePopup()">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
