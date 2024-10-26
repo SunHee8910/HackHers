@@ -1,59 +1,57 @@
-*{
+* {
     margin: 0;
     padding: 0;
 
 }
 
-.main{
+.main {
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(2pink.jpg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(3pink.avif);
     background-position: center;
     background-size: cover;
     height: 109vh;
 }
 
-.navbar{
-    width: 1200px;
+.navbar {
+    display: flex;
     height: 75px;
     margin: auto;
 }
 
-.icon{
-    width: 200px;
+.icon {
     float: left;
     height: 70px;
 }
 
-.logo{
+.logo {
     color: #FF066E;
-    font-size: 35px;
+    font-size: 40px;
     font-family: Arial;
     padding-left: 20ox;
     float: left;
-    padding-top: 10px;
+    padding-top: 25px;
 }
 
-.menu{
-    width: 400px;
+.menu {
     float: left;
     height: 70px;
 }
 
-ul{
+ul {
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-ul li{
+ul li {
     list-style: none;
     margin-left: 62px;
     margin-top: 27px;
     font-size: 14px;
 }
 
-ul li a{
+ul li a {
     text-decoration: none;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
@@ -61,51 +59,53 @@ ul li a{
     transition: 0.4s ease-in-out;
 }
 
-ul li a:hover{
-    color:#FF066E;
+ul li a:hover {
+    color: #FF066E;
 }
 
-.search{
-    width: 330px;
-    float: left;
-    margin-left: 270px;
+.search {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.srch{
-    font-family: 'Times New Roman';
-    width: 200px;
-    height: 40px;
-    background: transparent;
+.srch {
     border: 1px solid #FF066E;
-    margin-top: 13px;
+    background: transparent;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
     color: #ffffff;
-    border-right: none;
+    height: 40px;
+    font-family: 'Times New Roman';
     font-size: 16px;
     float: left;
     padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
 }
 
 
 
-.btn:focus{
+.btn {
+    outline: none;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #FF066E;
+}
+
+.srch:focus {
     outline: none;
 }
 
-.srch:focus{
-    outline: none;
-}
-
-.content{
+.content {
     width: 1200px;
     height: auto;
     margin: auto;
-    color:#fff;
+    color: #fff;
     position: relative;
 }
 
-.content .par{
+.content .par {
     padding-left: 20px;
     padding-bottom: 25px;
     font-family: Arial;
@@ -113,7 +113,7 @@ ul li a:hover{
     line-height: 30px;
 }
 
-.content h1{
+.content h1 {
     font-family: 'Times New Roman';
     font-size: 50px;
     padding-left: 20px;
@@ -121,7 +121,7 @@ ul li a:hover{
     letter-spacing: 2px;
 }
 
-.content .cn{
+.content .cn {
     width: 160px;
     height: 40px;
     background: #FF066E;
@@ -134,44 +134,43 @@ ul li a:hover{
     transition: .4s ease;
 }
 
-.content .cn a{
+.content .cn a {
     text-decoration: none;
-    color:black;
+    color: black;
     transition: .3s ease;
 }
 
-.cn:hover{
+.cn:hover {
     background-color: #fff;
 
 }
 
-.content span{
+.content span {
     color: #FF066E;
     font-size: 60px;
 }
 
-.popup .overlay{
-    position: fixed;
-    top: 0px;
-    left: 0px;
+.popup {
     width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.7);
-    z-index:1;
+    height: 109vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
     display: none;
 }
 
-.popup .content{
-    position: absolute;
-    top: 40%;
+.popup .content {
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scane(0);
-    background: #fff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: url(4game.png);
+    background-size: cover;
     width: 500px;
     height: 300px;
-    z-index:2;
+    z-index: 1;
+
     text-align: center;
-    color: black;
+    color: #FF066E;
     padding: 20px;
     box-sizing: border-box;
     box-align: center;
@@ -179,13 +178,13 @@ ul li a:hover{
 
 .popup .close-btn {
     cursor: pointer;
-    position:absolute;
+    position: absolute;
     right: 20px;
     top: 20px;
     width: 30px;
     height: 30px;
     background: #222;
-    color:#fff;
+    color: #fff;
     font-size: 25px;
     font-weight: 600;
     line-height: 30px;
@@ -194,33 +193,31 @@ ul li a:hover{
 }
 
 #popup-1 {
-    display: none; 
-    position: fixed;
+    display: none;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 
 #popup-1.active {
-    display: block; 
+    display: block;
 }
 
 
-.popup .active .content {
+/* .popup .active .content {
     transition: all 300ms ease-in-out;
     transform: translate(-50%, -50%) scale(1);
-}
+} */
 
 
-.form{
+.form {
     width: 250px;
     height: 380px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
     position: absolute;
     top: -20px;
     left: 870px;
@@ -228,20 +225,7 @@ ul li a:hover{
     padding: 25px;
 }
 
-.form h2{
-    width: 220px;
-    font-family: sans-serif;
-    text-align: center;
-    color: #222;
-    font-size: 22px;
-    background-color: #FFf;
-    border-radius: 10px;
-    margin: 2px;
-    padding: 8px;
-}
-
-
-.form input{
+.form input {
     width: 240px;
     height: 35px;
     background: transparent;
@@ -249,70 +233,80 @@ ul li a:hover{
     border-top: none;
     border-right: none;
     border-left: none;
-    color:#fff;
+    color: #fff;
     font-size: 15px;
     letter-spacing: 1px;
     margin-top: 30px;
     font-family: sans-serif;
 }
 
-.form input:focus{
+.form input:focus {
     outline: none;
 }
 
-::placeholder{
-    color:#fff;
+::placeholder {
+    color: #fff;
     font-family: Arial;
 }
 
-.btnn{
+#search-btn {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 80px;
+}
+
+#login-btn {
     width: 240px;
+    margin-top: 30px;
+    border-radius: 10px;
+
+}
+
+.btn {
     height: 40px;
     background: #FF066E;
     border: none;
-    margin-top: 30px;
     font-size: 18px;
-    border-radius: 10px;
     cursor: pointer;
     color: #fff;
     transition: 0.4s ease;
 }
 
-.btnn:hover{
+.btn:hover {
     background: #fff;
     color: #FF066E;
 }
 
-.btnn a{
+.btn a {
     text-decoration: none;
-    color:black;
+    color: black;
     font-weight: bold;
 }
 
-.form .link{
+.form .link {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
     padding-top: 20px;
     text-align: center;
 }
 
-.form .link a{
+.form .link a {
     text-decoration: none;
     color: #FF066E;
 }
 
-.liw{
+.liw {
     padding-top: 15px;
     padding-bottom: 10px;
     text-align: center;
 }
 
-.icons a{
+.icons a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
 
-.icons ion-icon{
+.icons ion-icon {
     color: #fff;
     font-size: 30px;
     padding-left: 14px;
@@ -320,6 +314,6 @@ ul li a:hover{
     transition: 0.3s ease;
 }
 
-.icons ion-icon:hover{
+.icons ion-icon:hover {
     color: #FF066E;
 }
