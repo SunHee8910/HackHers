@@ -6,14 +6,21 @@
     <title>Budget Game</title>
 </head>
 <style>
+    @font-face {
+        font-family: "Gabarito";
+        src: url(Gabarito-VariableFont_wght.ttf);
+    }
     body{
         background-color: #FFDFDF;
+        font-family: 'Gabarito', sans-serif;
     }
     .gameTitle{
         text-align: center;
         text-decoration: underline;
         color: #FF066E;
         margin-bottom: 1em;
+        margin-top: 1em;
+        font-size: 30pt;
     }
     .beginn, .decisions, .outcome, .ending{
         background-color: white;
@@ -26,11 +33,10 @@
         top: 50%;
         left:50%;
         transform: translate(-50%,-50%);
-        
-/*         
-        display: flex;
-        justify-content: center;
-        align-items: center; */
+        padding: 10px;
+    }
+    .beginn p, .decisions p, .outcome p, .ending p{
+        padding-top: 60px;
     }
     .beginn{
         z-index: 5;
@@ -88,7 +94,8 @@
 
     fieldset{
         text-align: center;
-        border:none
+        border:none;
+        padding-top:60px;
     }
 
     fieldset strong,
@@ -114,7 +121,6 @@
         border-radius: 4px;
     }
 
-    
 </style>
 
 <script>
@@ -128,7 +134,7 @@
 </script>
 
 <body>
-    <div class = "center">
+    <div class = "center overlay">
         <div class = "gameTitle">
             Budget Game Demo
         </div>
@@ -176,8 +182,8 @@
             </div>
         </div>
 
-        <div class = "popup active instructions" id = "popup1">
-            <div class = "overlay"></div>
+        <div class = "active instructions" id = "popup1">
+            <!-- <div class = "overlay"></div> -->
             <div class = "content">
                 <div class = "top"><span class = "words">How To Play</span>
                     <span class = "close-btn" onclick = "togglePopup()">&times;</span>
